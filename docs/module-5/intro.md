@@ -106,3 +106,5 @@ Help each other,
 
 And even help you do your job faster and smarter!
 
+![image](https://github.com/user-attachments/assets/8e166395-338e-4b67-b2e8-c37cd1780ef6)
+
