@@ -37,8 +37,6 @@ This lets you write a custom prompt to decide who talks next, based on chat hist
 ### Example prompt:
 
 ```python
-Copy
-Edit
 After user input → CopywriterAgent replies  
 After CopywriterAgent → ReviewingDirectorAgent replies  
 After ReviewingDirectorAgent → CopywriterAgent replies again
@@ -47,34 +45,28 @@ You can also shorten the chat history used (called chat history truncation) to m
 
 ## 3. Custom Strategy (SelectionStrategy Class)
 You can create your own custom logic by writing a select_agent() function.
-
 Example:
-
 ```python
-Copy
-Edit
 If the last message was a question → Let Copywriter answer  
 If it's feedback → Let Reviewer answer
 ```
 Then assign this strategy when setting up the chat:
 
 ```python
-Copy
-Edit
 chat = AgentGroupChat(selection_strategy=my_strategy)```
+```
 
 # 📉 Truncating Chat History (Optional)
 To save memory or cost:
-
-Only use the last 1 or 2 messages to choose the next agent.
-
-You can set this using ChatHistoryTruncationReducer(target_count=1)
+- Only use the last 1 or 2 messages to choose the next agent.
+- You can set this using ChatHistoryTruncationReducer(target_count=1)
 
 ✅ Summary
-Feature	What it Does
-Agent Selection	Chooses the best agent to respond
-Sequential Strategy	Agents take turns in order
-Kernel Function Strategy	You write a smart rule (prompt) to choose
-Custom Strategy	You write full code to decide
-Truncating History	Keeps only a few messages to improve performance
+|Feature	|What it Does|
+|-----|-----|
+|Agent Selection	|Chooses the best agent to respond|
+|Sequential Strategy	| Agents take turns in order|
+|Kernel Function Strategy	|You write a smart rule (prompt) to choose|
+|Custom Strategy	|You write full code to decide|
+|Truncating History	|Keeps only a few messages to improve performance|
 
